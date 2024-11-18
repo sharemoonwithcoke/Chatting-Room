@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat Application</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+    <div id="login-view">
+        <div class="login-container">
+          <h1 class="login-title">you are...</h1>
+          <input type="text" id="username" class="login-input" placeholder="Enter username">
+          <button id="login-button" class="login-button">Login</button>
+          <div class="loading-indicator" id="login-loading" hidden>Loading...</div>
+          <div id="login-error" class="error-message"></div>
+        </div>
+      </div>
+      
+
+
+  <div id="chat-app" hidden>
+    <div class="chat-header">Chat Application</div>
+    <div class="chat-users">
+      <h3>Online Users</h3>
+      <ul id="user-list"></ul>
+    </div>
+    <div class="chat-messages">
+        <div id="messages-loading" class="loading-indicator" hidden>Loading messages...</div>
+      <ul id="message-list"></ul>
+    </div>
+    <div class="outgoing">
+      <input type="text" id="message-input" class="to-send" placeholder="Type your message">
+      <div class="buttons">
+        <button id="send-button" class="send-button">Send</button>
+        <button id="logout-button" class="logout-button">Logout</button>
+      </div>
+      <div id="error" class="error-message"></div>
+    </div>
+  </div>
+  <script src="dist/bundle.js"></script>
+</body>
+</html>
+

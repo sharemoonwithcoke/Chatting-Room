@@ -1,0 +1,273 @@
+[hidden] {
+    display: none !important;
+  }
+  
+ 
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+ 
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f7f7f7;
+}
+
+#chat-app {
+  display: grid;
+  grid-template-areas: 
+    "header header"
+    "users messages"
+    "users outgoing"; 
+  grid-template-columns: 250px 1fr; 
+  grid-template-rows: auto 1fr auto; 
+  height: 100vh;
+  max-width: 1200px;
+  width: 90vw;
+  gap: 15px;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#login-view {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f7f7f7;
+  }
+  
+  .login-container {
+    background-color: #ffffff;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 300px;
+    width: 90%;
+  }
+  
+  .login-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .login-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .login-input:focus {
+    border-color: #4A90E2;
+    outline: none;
+  }
+  
+  .login-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #a8e6a1;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .login-button:hover {
+    background-color: #92d090;
+  }
+  
+ 
+  
+
+.chat-header {
+  grid-area: header;
+  background-color: #a8e6a1;
+  color: #333;
+  text-align: center;
+  padding: 15px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+
+.chat-users {
+  grid-area: users;
+  background-color: #eaeaea;
+  overflow-y: auto;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+.chat-users ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .chat-users li {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  
+  .user-status {
+    width: 20px;
+    height: 20px;
+    background-color: green; 
+    border-radius: 50%;     
+    margin-right: 8px;
+    display: inline-block;
+  }
+  
+
+.chat-users .username {
+  font-weight: bold;
+  color: #555;
+}
+
+
+.chat-messages {
+  grid-area: messages;
+  background-color: #ffffff;
+  overflow-y: auto;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.messages {
+  list-style: none;
+  padding: 0;
+}
+
+.message {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  align-items: flex-start;
+}
+
+.message .username {
+  font-weight: bold;
+  color: #4A90E2;
+}
+
+.message .text {
+  color: #333;
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 10px;
+  line-height: 1.4;
+  max-width: 75%;
+}
+
+
+.outgoing {
+  grid-area: outgoing;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  background-color: #ffffff;
+  border-top: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05);
+  gap: 10px;
+}
+
+.to-send {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f7f7f7;
+}
+
+.to-send:focus {
+  border-color: #4A90E2;
+  outline: none;
+}
+
+
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.send-button, .logout-button {
+  flex: 1;
+  padding: 10px 16px;
+  background-color: #a8e6a1;
+  color: #333;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.send-button:hover, .logout-button:hover {
+  background-color: #92d090;
+}
+
+
+.loading-indicator {
+  text-align: center;
+  font-size: 1rem;
+  color: #666;
+  padding: 10px;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 8px;
+  }
+  
+  
+  @media (max-width: 600px) {
+    #chat-app {
+      grid-template-areas:
+        "header"
+        "messages"
+        "users"
+        "outgoing";
+      grid-template-columns: 1fr;
+      grid-template-rows: auto 1fr auto auto;
+    }
+  
+    .chat-header {
+      font-size: 1.5rem;
+    }
+  
+    .to-send {
+      font-size: 0.75rem;
+    }
+  
+    .send-button {
+      font-size: 0.75rem;
+    }
+  }
